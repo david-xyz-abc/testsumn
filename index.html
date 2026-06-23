@@ -8,15 +8,20 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: #eef2f5;
       color: #222;
     }
 
     header {
-      background: #202124;
+      background: #1d3557;
       color: white;
-      padding: 32px 20px;
+      padding: 42px 20px;
       text-align: center;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-bottom: 0;
     }
 
     main {
@@ -31,6 +36,10 @@
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       margin-bottom: 20px;
+    }
+
+    .highlight {
+      border-left: 5px solid #e63946;
     }
 
     h1, h2 {
@@ -51,11 +60,11 @@
 <body>
   <header>
     <h1>Cars Are Pretty Useful</h1>
-    <p>A simple page about cars, because why not.</p>
+    <p>A quick, friendly guide to the machines that keep the world moving.</p>
   </header>
 
   <main>
-    <section>
+    <section class="highlight">
       <h2>What Is A Car?</h2>
       <p>
         A car is a vehicle with wheels, an engine or motor, seats, and enough
@@ -70,6 +79,15 @@
         <li>SUVs for space and comfort</li>
         <li>Sports cars for speed and style</li>
         <li>Electric cars for quieter driving</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Before You Drive</h2>
+      <ul>
+        <li>Check mirrors and seat position</li>
+        <li>Make sure fuel or battery range is enough</li>
+        <li>Listen for unusual sounds before a long trip</li>
       </ul>
     </section>
 

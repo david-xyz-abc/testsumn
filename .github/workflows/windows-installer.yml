@@ -1,0 +1,28 @@
+name: Test Windows Java and Maven installer
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - install-java26-maven.bat
+      - tests/**
+      - .github/workflows/windows-installer.yml
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Java and Maven
+        shell: cmd
+        run: install-java26-maven.bat --unattended
+      - name: Verify system installation and build a Java 26 project
+        shell: powershell
+        run: ./tests/verify-install.ps1
+      - name: Repeat installation
+        shell: cmd
+        run: install-java26-maven.bat --unattended
+      - name: Verify again
+        shell: powershell
+        run: ./tests/verify-install.ps1
